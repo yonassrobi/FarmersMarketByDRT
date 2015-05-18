@@ -449,7 +449,7 @@ module.exports = function(grunt) {
         'sass',
         'useminPrepare',
         'requirejs',
-        'imagemin',
+        //'imagemin',
         'concat',
         'cssmin',
         'uglify',
