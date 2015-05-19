@@ -23,13 +23,13 @@
   "dependencies": {
     "bower": "~1.4.1",
     "grunt-cli": "~0.1.13",
+    "grunt": "~0.4.1",
     "express": "~4.12.4"
   },
   "devDependencies": {
     "connect-livereload": "~0.3.2",
     "jshint-stylish": "~0.1.5",
     "karma": "~0.10.10",
-    "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-connect": "~0.6.0",
