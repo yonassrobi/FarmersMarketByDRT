@@ -1,8 +1,8 @@
 // router.js - default router the entire application
 // ----------------
-define(['jquery', 'backbone', 'views/searchView', 'views/resultsView'],
+define(['jquery', 'backbone', 'views/searchView'/*, 'views/resultsView'*/],
 
-    function($, Backbone, SearchView, ResultsView) {
+    function($, Backbone, SearchView/*, ResultsView*/) {
         'use strict';
 
         var Router = Backbone.Router.extend({
@@ -23,7 +23,7 @@ define(['jquery', 'backbone', 'views/searchView', 'views/resultsView'],
             index: function() {
 
                 this.searchView = new SearchView();
-                this.resultsView = new ResultsView();
+                //this.resultsView = new ResultsView();
 
             }
             
