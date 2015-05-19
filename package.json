@@ -7,7 +7,7 @@
   "scripts": {
     "test": "test/",
     "start": "node app.js",
-    "postinstall": "./node_modules/bower/bin/bower install && ./node_modules/grunt-cli/bin/grunt build"
+    "postinstall": "node_modules/.bin/bower install && node_modules/.bin/grunt build"
   },
   "keywords": [
     "Application",
