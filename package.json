@@ -24,9 +24,7 @@
     "bower": "~1.4.1",
     "grunt-cli": "~0.1.13",
     "grunt": "~0.4.1",
-    "express": "~4.12.4"
-  },
-  "devDependencies": {
+    "express": "~4.12.4",
     "connect-livereload": "~0.3.2",
     "jshint-stylish": "~0.1.5",
     "karma": "~0.10.10",
@@ -53,5 +51,8 @@
     "grunt-bower-task": "~0.4.0",
     "load-grunt-tasks": "~0.3.0",
     "time-grunt": "~0.2.8"
+  },
+  "devDependencies": {
+
   }
 }
