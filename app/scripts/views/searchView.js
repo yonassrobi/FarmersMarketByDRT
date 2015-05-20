@@ -1,7 +1,7 @@
 // SearchView.js
 // ----------
 define([
-	'jquery', 'backbone', 'selectize', 'text!templates/search.html', 'ext!templates/carousel.html','text!locale/search.json', 'text!locale/es_mx/search.json',
+	'jquery', 'backbone', 'selectize', 'text!templates/search.html', 'text!templates/carousel.html','text!locale/search.json', 'text!locale/es_mx/search.json',
 	'collections/farmersMarketCollection','text!mockdata/market.json',
 ], function($, Backbone, Selectize, template, CarouselTemplate, content, contentES, FarmersMarket, MockData) {
 	'use strict';
