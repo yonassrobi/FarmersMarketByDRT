@@ -1,35 +1,26 @@
-// router.js - default router the entire application
-// ----------------
-define(['jquery', 'backbone', 'views/searchView', 'views/resultsView'],
 
-    function($, Backbone, SearchView, ResultsView) {
-        'use strict';
+define([
+    'jquery',
+    'backbone',
+    'views/searchView'
+], function ($, Backbone, SearchView) {
+    'use strict';
 
-        var Router = Backbone.Router.extend({
-
-            initialize: function() {
+    var RouterRouter = Backbone.Router.extend({
+        initialize: function() {
+                //this.requestModel = new RequestModel();
                 Backbone.history.start();
             },
 
-            // All of your Backbone Routes (add more)
-            routes: {
+        routes: {
+            '':'index'
+        },
 
-                // When there is no hash on the url, the home method is called
-                '': 'index',
-                'results': 'results'
+        index:function(){
+            this.searchView = new SearchView();
+            $('#main-content').html(this.searchView .render().el);
+        }
+    });
 
-            },
-
-            index: function() {
-
-                this.searchView = new SearchView();
-                this.resultsView = new ResultsView();
-
-            }
-            
-        });
-
-        // Returns the router class
-        return Router;
-    }
-);
+    return RouterRouter;
+});
