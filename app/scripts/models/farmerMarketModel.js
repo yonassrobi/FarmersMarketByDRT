@@ -20,7 +20,7 @@ define([
             "website":"",
             "street":"",
             "city":"",
-            "sounty":"",
+            "county":"",
             "state":"",
             "zip":"",
             "Seasons":[],

@@ -2,8 +2,9 @@
 // ----------
 define([
 	'jquery', 'backbone', 'selectize', 'text!templates/search.html', 'text!templates/carousel.html','text!locale/search.json', 'text!locale/es_mx/search.json',
+	'text!templates/resultsSubTemplate.html',
 	'collections/farmersMarketCollection','text!mockdata/market.json',
-], function($, Backbone, Selectize, template, CarouselTemplate, content, contentES, FarmersMarket, MockData) {
+], function($, Backbone, Selectize, template, CarouselTemplate, content, contentES, ResultsSubTemplate, FarmersMarket, MockData) {
 	'use strict';
 
 	// Creates a new Backbone View class object
@@ -45,11 +46,20 @@ define([
 
 		},
 		getResults:function(){
+			//Load the farmers Market collection
             this.farmersMarket = new FarmersMarket();
             //this.farmersMarket.url = 'testurl';
             this.farmersMarket.parse(JSON.parse(MockData));
 
-            console.log(this.farmersMarket.length)
+            //Display the results 
+            this.$el.find('#resultsContainer').html('');
+
+            this.resultsTemplate = _.template(ResultsSubTemplate,{
+            	collection:this.farmersMarket.toJSON()
+            });
+
+            this.$el.find('#resultsContainer').html(this.resultsTemplate)
+
         }
 
 	});
