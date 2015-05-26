@@ -2,13 +2,14 @@
 define([
     'jquery',
     'backbone',
+    'models/requestModel',
     'views/searchView'
-], function ($, Backbone, SearchView) {
+], function ($, Backbone, RequestModel, SearchView) {
     'use strict';
 
     var RouterRouter = Backbone.Router.extend({
         initialize: function() {
-                //this.requestModel = new RequestModel();
+                this.requestModel = new RequestModel();
                 Backbone.history.start();
             },
 
@@ -17,8 +18,8 @@ define([
         },
 
         index:function(){
-            this.searchView = new SearchView();
-            $('#main-content').html(this.searchView .render().el);
+            this.searchView = new SearchView({model:this.requestModel});
+            $('#main-content').html(this.searchView.render().el);
         }
     });
 

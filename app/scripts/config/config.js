@@ -29,7 +29,9 @@ require.config({
 
         sifter: '../vendor/sifter/sifter',
 
-        microplugin: '../vendor/microplugin/microplugin'
+        microplugin: '../vendor/microplugin/microplugin',
+
+        geocomplete: '../vendor/geocomplete/jquery.geocomplete'
         
     },
 
@@ -59,6 +61,11 @@ require.config({
         selectize: {
             deps: ['jquery', 'bootstrap', 'sifter', 'microplugin'],
             exports: 'Selectize'
+        },
+
+        geocomplete:{
+            deps:['jquery'],
+            exports:'geocomplete'
         }
 
     }
