@@ -1,50 +1,47 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
 </div>
 <!-- adding search section -->
-<div id="searchContainer" class="row">
-  <div class="col-lg-12" >
-    <div class="input-group" style="border-left: 4px solid #333; margin-top: 20px;">
-      <div class="input-group-btn" >
-        <button type="button" class="btn btn-default dropdown-toggle" style="width: 250px;" data-toggle="dropdown" aria-expanded="false">Buy <span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu">
-          <li>Apples</li>
-          <li>Banana</li>
-        </ul>
-        </div><!-- /btn-group -->
-        <input id="geocomplete" type="text" class="form-control" aria-label="..." placeholder="Type in an address" >
-        <div class="input-group-btn">
-          <button id="btnSearch" class="btn btn-primary"><i class="glyphicon glyphicon-zoom-in"></i></button>
+<div id="searchContainer" class="row mtl mbl">
+    <div class="col-md-6">
+        <div class="input-group">
+            <label for="geocomplete" class="sr-only">Type text to search</label>
+            <input id="geocomplete" type="text" class="form-control" aria-label="..." placeholder="Type in an address" autocomplete="off">
+        
+            <div class="input-group-btn">
+                <button id="btnSearch" class="btn btn-primary"><i class="glyphicon glyphicon-zoom-in"></i> Search</button>
         </div>
       </div>
     </div>
+    <div class="col-md-3">
+        <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#advSearchContainer">Advanced Search</button>
   </div>
-  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 collapse" id="advSearchContainer" >
+        <div class=" top_arrow_box mtl">
+            <form role="form" class="row">
     <div class="col-md-6">
-      [Search results number]
+                <p> auto complete dropdown</p>
+
     </div>
     <div class="col-md-6">
-      <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#demo">Advanced Search</button>
-      <div id="demo" class="collapse in">
-        <form role="form">
           <div class="checkbox">
-            <label><input type="checkbox" value="">Option 1</label>
+                        <label>
+                            <input type="checkbox" value="">Option 1</label>
           </div>
           <div class="checkbox">
-            <label><input type="checkbox" value="">Option 2</label>
+                        <label>
+                            <input type="checkbox" value="">Option 2</label>
           </div>
           <div class="checkbox disabled">
-            <label><input type="checkbox" value="" disabled>Option 3</label>
+                        <label>
+                            <input type="checkbox" value="" disabled>Option 3</label>
           </div>
+                </div>
         </form>
       </div>
     </div>
-    
-  </div>
-  <!-- End search section -->
-  <!-- start results section -->
-  <div id="resultsContainer" class="row">
-    
-  </div>
-  <!-- End Results Section-->
- 
+</div>
+<!-- End search section -->
+<!-- start results section -->
+<div id="resultsContainer">
+</div>
+<!-- End Results Section-->
