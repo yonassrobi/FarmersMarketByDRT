@@ -1,74 +1,94 @@
-<%for (var i=0; i < collection.length; i++) { %>
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <div class="row">
-        <div class="col-md-2">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-map-marker fa-stack-2x" style="font-size: 70px;"></i>
-            <i class="fa fa-stack-1x" style="width: 100%; top: 20%;">1</i>
-          </span>
-          
-          <div class="distance">5.9 mi</div>
-        </div>
-        <div class="col-md-6">
-          <h3 class="title">
-          <a href=""><%- collection[i].marketName%></a>
-          </h3>
-        </div>
-      </div>
+<div class="row">
+    <div class="col-md-6">
+        <h2>Number of result found [x]</h2>
     </div>
-    <div class="panel-body">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="address1"><%- collection[i].street%></div>
-        <div class="address2"><%- collection[i].city%>, <%- collection[i].state%> <%- collection[i].zip%></div>
-        <%if (collection[i].website.length > 0 ) {%>
-        <div class="website">
-          <a href="<%= collection[i].website %>">View Website</a>
-        </div>
-        <%}%>
-      </div>
-      <!-- display the list of seasons-->
-      <div class="col-md-4 details">
-        <ul>
-          <%if (collection[i].Seasons !== undefined) {%>
-            <%for (var j=0; j < collection[i].Seasons.length; j++) { %>
-              <li><%- collection[i].Seasons.models[j].seasonDate%>: <%- collection[i].Seasons.models[j].seasonTime %></li>
-            <%}%>
-          <%}%>
+    <div class="col-md-6 text-right">
+        <ul id="myTab" class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active"><a href="#list" id="list-tab" role="tab" data-toggle="tab" aria-controls="list" aria-expanded="true">List View</a></li>
+            <li role="presentation"><a href="#map" role="tab" id="map-tab" data-toggle="tab" aria-controls="map">Map View</a></li>
+            
         </ul>
-      </div>
-      <!-- end of seasons display-->
-      <div class="col-md-4 evaluation">
-        <i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle-thin"></i><i class="fa fa-circle-thin"></i>
-        <div>List of Products available</div>
-          <%if (collection[i].products !== undefined) {%>
-            <%for (var j=0; j < collection[i].products.length; j++) { %>
-              <div class="rating dots">
-                <div class="value value-3"></div>
+    </div>
+</div>
+<div id="myTabContent" class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="list" aria-labelledby="list-tab">
+        <%for (var i=0; i < collection.length; i++) { %>
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-map-marker fa-stack-2x" style="font-size: 70px;"></i>
+                        <i class="fa fa-stack-1x" style="width: 100%; top: 20%;">1</i>
+                      </span>
+                      
+                      <div class="distance">5.9 mi</div>
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="title">
+                      <a href=""><%- collection[i].marketName%></a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="address1"><%- collection[i].street%></div>
+                    <div class="address2"><%- collection[i].city%>, <%- collection[i].state%> <%- collection[i].zip%></div>
+                    <%if (collection[i].website.length > 0 ) {%>
+                    <div class="website">
+                      <a href="<%= collection[i].website %>">View Website</a>
+                    </div>
+                    <%}%>
+                  </div>
+                  <!-- display the list of seasons-->
+                  <div class="col-md-4 details">
+                    <ul>
+                      <%if (collection[i].Seasons !== undefined) {%>
+                        <%for (var j=0; j < collection[i].Seasons.length; j++) { %>
+                          <li><%- collection[i].Seasons.models[j].seasonDate%>: <%- collection[i].Seasons.models[j].seasonTime %></li>
+                        <%}%>
+                      <%}%>
+                    </ul>
+                  </div>
+                  <!-- end of seasons display-->
+                  <div class="col-md-4 evaluation">
+                    <i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle-thin"></i><i class="fa fa-circle-thin"></i>
+                    <div>List of Products available</div>
+                      <%if (collection[i].products !== undefined) {%>
+                        <%for (var j=0; j < collection[i].products.length; j++) { %>
+                          <div class="rating dots">
+                            <div class="value value-3"></div>
+                          </div>
+                          <div><%- collection[i].products.models[j].productName%>: <%- collection[i].products.models[j].productAvailability %></div>
+                        <%}%>
+                      <%}%>
+                    
+                  </div>
+                  <br clear="both">
+                </div>
+                </div>
+                <div class="panel-footer">
+                   <span class="fa-stack fa-lg">
+                        <i class="fa fa-square fa-stack-2x"></i>
+                        <i class="fa fa-file fa-stack-1x fa-inverse" ></i>
+                      </span>
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-square fa-stack-2x"></i>
+                        <i class="fa fa-heart fa-stack-1x fa-inverse" ></i>
+                      </span>
+                  <span class="fa-stack fa-lg">
+                        <i class="fa fa-square fa-stack-2x"></i>
+                        <i class="fa fa-info fa-stack-1x fa-inverse" ></i>
+                      </span>
+                </div>
+               
               </div>
-              <div><%- collection[i].products.models[j].productName%>: <%- collection[i].products.models[j].productAvailability %></div>
             <%}%>
-          <%}%>
-        
-      </div>
-      <br clear="both">
     </div>
+    <div role="tabpanel" class="tab-pane fade" id="map" aria-labelledby="map-tab">
+        <p>Map view to be added</p>
     </div>
-    <div class="panel-footer">
-       <span class="fa-stack fa-lg">
-            <i class="fa fa-square fa-stack-2x"></i>
-            <i class="fa fa-file fa-stack-1x fa-inverse" ></i>
-          </span>
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-square fa-stack-2x"></i>
-            <i class="fa fa-heart fa-stack-1x fa-inverse" ></i>
-          </span>
-      <span class="fa-stack fa-lg">
-            <i class="fa fa-square fa-stack-2x"></i>
-            <i class="fa fa-info fa-stack-1x fa-inverse" ></i>
-          </span>
-    </div>
-   
-  </div>
-<%}%>
+</div>
+
